@@ -1,17 +1,38 @@
 # Planetary Seismology Signal Detection
 
 ## Overview
+This project aims to analyze seismic data from the Apollo missions and the Mars InSight Lander to identify and classify seismic events. Given the constraints of planetary missions, where high-resolution seismic data transmission to Earth requires significant power, the goal is to develop algorithms that can distinguish scientifically valuable signals from noise.
 
-This project focuses on the analysis of seismic data from the Apollo missions and the Mars InSight Lander to detect and classify seismic events. As planetary seismology missions encounter significant challenges in transmitting high-resolution seismic data back to Earth due to power constraints, our goal is to develop algorithms that effectively distinguish scientifically valuable signals from background noise.
+## Objectives
+- Develop a system to process and analyze seismic data from planetary missions.
+- Implement the Short-Term Average/Long-Term Average (STA/LTA) algorithm to detect seismic events.
+- Utilize machine learning techniques, particularly Random Forest classifiers, to separate noise from seismic signals.
+- Visualize the results, including filtered seismic data, detection performance, and classification metrics.
 
-The **primary objectives** of this project include:
+## Data Sources
+- Seismic data from the Apollo missions.
+- Data from the Mars Interior Exploration using Seismic Investigations, Geodesy, and Heat Transport (InSight) Lander.
+- Example datasets provided for training and testing purposes.
 
-- **Data Preprocessing**: Cleaning and filtering raw seismic data to isolate relevant frequency ranges. This step is crucial for enhancing the visibility of seismic signals and reducing the effects of noise.
+## Methodology
 
-- **Event Detection**: Implementing the Short-Term Average/Long-Term Average (STA/LTA) algorithm to identify potential seismic events within the noisy dataset. By analyzing energy differences across short and long segments of data, the STA/LTA algorithm provides a robust method for detecting seismic activity.
+### Data Preprocessing
+- Load seismic data and perform necessary cleaning.
+- Apply a bandpass filter to isolate relevant seismic frequencies.
 
-- **Machine Learning Classification**: Utilizing machine learning techniques, specifically a Random Forest classifier, to further refine the separation of noise from signals. This involves extracting key features from the seismic data, such as amplitude and energy, to train a model that can accurately predict whether a given segment is a signal or noise.
+### Event Detection
+- Implement the STA/LTA algorithm to identify potential seismic events in the filtered data.
+- Mark detected events for further analysis.
 
-- **Visualization**: Providing clear visualizations of the filtered data, detected events, and model performance metrics. This aids in understanding the characteristics of the seismic signals and evaluating the effectiveness of the detection algorithms.
+### Machine Learning Classification
+- Extract features from the data, such as amplitude and energy.
+- Train a Random Forest classifier to distinguish between noise and signal.
+- Evaluate model performance using metrics like precision, recall, and F1-score.
 
-By effectively processing and analyzing seismic data, this project aims to contribute valuable insights into planetary seismology while optimizing data transmission for future missions. The methodologies developed here could be crucial for ensuring that only the most relevant seismic data is transmitted back to Earth, thereby conserving power and bandwidth in space exploration.
+### Visualization
+- Plot the filtered seismic data with detected events.
+- Generate confusion matrices and precision-recall curves to assess model performance.
+
+## Results
+- The model successfully identifies seismic events within the noisy data.
+- Visualizations provide insight into the model's performance and the characteristics of the seismic signals.
